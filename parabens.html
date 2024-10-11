@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parabéns! - FGTS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #005f9e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+        .container {
+            background-color: white;
+            width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+        .header {
+            width: 100%;
+            height: 150px;
+            background-image: url('fg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        h2 {
+            color: #005f9e;
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        p {
+            color: #333;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0a570a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header"></div>
+        <h2>Parabéns!</h2>
+        <p>Aguarde 24 horas, seu depósito cairá em sua conta.</p>
+        <button onclick="compartilhar()">Compartilhar no WhatsApp</button>
+    </div>
+
+    <script>
+        function compartilhar() {
+            window.open('https://api.whatsapp.com/send?text=Eu acabei de simular meu FGTS e sacar com sucesso!');
+        }
+    </script>
+</body>
+</html>

